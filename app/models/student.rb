@@ -21,7 +21,7 @@ class Student < ActiveRecord::Base
     else
       Student.all.each do |s|
         if s.name.match(student_name)
-          search_results << s
+          search_results << s.name
         end
       end
       search_results
