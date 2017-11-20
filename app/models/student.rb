@@ -22,11 +22,11 @@ class Student < ActiveRecord::Base
       Student.all
     else
       Student.all.each do |s|
-        if s.name.match(student_name)
+        if s.name.downcase.include?(student_name)
           search_results << s.name
         end
       end
-      search_results
+      search_results    
     end
   end
 
