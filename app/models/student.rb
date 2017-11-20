@@ -26,7 +26,7 @@ class Student < ActiveRecord::Base
           search_results << s.name
         end
       end
-      search_results    
+      search_results
     end
   end
 
