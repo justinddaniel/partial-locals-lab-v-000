@@ -13,4 +13,13 @@
 class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
+
+  def search(student_name = nil)
+    if student_name == nil
+      Student.all 
+    else
+      Student.find_by(:name => :student_name)
+    end
+  end
+  
 end
