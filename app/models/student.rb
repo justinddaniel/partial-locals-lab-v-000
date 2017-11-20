@@ -15,11 +15,17 @@ class Student < ActiveRecord::Base
   has_many :classrooms, through: :classroom_students
 
   def search(student_name = nil)
+    search_results = []
     if student_name == nil
-      Student.all 
+      Student.all
     else
-      Student.find_by(:name => :student_name)
+      Student.all.each do |s|
+        if s.name.match(student_name)
+          search_results << s
+        end
+      end
+      search_results
     end
   end
-  
+
 end
