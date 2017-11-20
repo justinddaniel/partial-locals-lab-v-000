@@ -14,7 +14,7 @@ class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
 
-  def search(student_name = nil)
+  def self.search(student_name = nil)
     search_results = []
     if student_name == nil
       Student.all
